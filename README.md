@@ -33,6 +33,12 @@ To receive bids I have created an endpoint
         "message": "Error Message",
     }
 
+    404:
+    {
+        "status_code": 404,
+        "message": "Not Found Message"
+    }
+
     500:
     {
         "status_code": 500,
@@ -54,6 +60,12 @@ Once the event end time is up, we can hit another endpoint to provide us the win
     {
         "status_code": 400,
         "message": "Error Message",
+    }
+
+    404:
+    {
+        "status_code": 404,
+        "message": "Not Found Message"
     }
 
     500:

@@ -6,13 +6,13 @@ namespace AuctionSystemCore.AuctionSystemCore.Models
 {
     public partial class auction_systemContext : DbContext
     {
-        public auction_systemContext()
+        public auction_systemContext(string connectionString) : base(GetOptions(connectionString))
         {
         }
 
-        public auction_systemContext(DbContextOptions<auction_systemContext> options)
-            : base(options)
+        private static DbContextOptions GetOptions(string connectionString)
         {
+            return SqlServerDbContextOptionsExtensions.UseSqlServer(new DbContextOptionsBuilder(), connectionString).Options;
         }
 
         public virtual DbSet<Bids> Bids { get; set; }

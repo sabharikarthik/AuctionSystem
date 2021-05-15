@@ -10,11 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-// using AuctionSystemCore.Models;
+using AuctionSystemCore.AuctionSystemCore.Models;
 using Microsoft.Identity.Client;
 using Microsoft.Graph;
 using Microsoft.Graph.Auth;
-// using AuctionSystemCore.Services;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Http.Connections;
 using Newtonsoft.Json; 
@@ -66,7 +65,7 @@ namespace AuctionSystemCore
             });
             services.AddHttpContextAccessor();
             services.AddSingleton<IConfiguration>(Configuration);
-            // services.AddDbContext<dbContext>(_ => new dbContext(Configuration["ConnectionString"].ToString()));
+            services.AddDbContext<auction_systemContext>(_ => new auction_systemContext(Configuration["ConnectionString"].ToString()));
         }
 
         // Configures the HTTP pipeline by constructing the stack of middlewares to pass through for each request
