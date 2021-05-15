@@ -30,13 +30,25 @@ To receive bids I have created an endpoint
     400:
     {
         "status_code": 400,
-        "message": "Error Message",
+        "message": "Event is not active to receive bids",
+    }
+
+    400:
+    {
+        "status_code": 400,
+        "message": "Bid found already",
     }
 
     404:
     {
         "status_code": 404,
-        "message": "Not Found Message"
+        "message": "Event not found"
+    }
+
+    404:
+    {
+        "status_code": 404,
+        "message": "Sold Item not found"
     }
 
     500:
@@ -56,16 +68,23 @@ Once the event end time is up, we can hit another endpoint to provide us the win
         "winning_bid": 12000
     }
 
+    
     400:
     {
         "status_code": 400,
-        "message": "Error Message",
+        "message": "Event is not yet complete to generate the winning bid",
     }
 
     404:
     {
         "status_code": 404,
-        "message": "Not Found Message"
+        "message": "Event not found"
+    }
+
+    404:
+    {
+        "status_code": 404,
+        "message": "Sold Item not found"
     }
 
     500:
